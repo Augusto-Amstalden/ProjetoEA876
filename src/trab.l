@@ -1,5 +1,5 @@
 %{
-#include "y.tab.h"
+#include "trab.tab.c"
 #include <stdlib.h>
 
 void yyerror(char *);
@@ -8,8 +8,8 @@ void yyerror(char *);
 
 
 %%
-[\+\-\*\^]  	{ yylval = *yytext;
-		  return OP;}
+[\+\-\*\^]  	{yylval =  *yytext;
+		return OP;        }
 [()]		{return *yytext;}
 [\n]		{return FIM;}
 [0-9]+ 		{yylval = atoi(yytext);
